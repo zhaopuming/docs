@@ -2,8 +2,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set nocompatible
-set nocompatible
+" Set nocompatible set nocompatible
 
 " Sets how many lines of history VIM has to remember
 set history=700
@@ -25,7 +24,7 @@ let mapleader = ","
 let g:mapleader = ","
 
 " Fast saving
-nmap <leader>w :w!<cr>
+nmap <leader>w :wall!<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -208,12 +207,14 @@ augroup jd
   autocmd!
   autocmd FileType jade set noexpandtab
   autocmd FileType jade set tabstop=2
+  autocmd FileType jade set shiftwidth=2
 augroup END
 
 augroup d
   autocmd!
   autocmd FileType d set noexpandtab
   autocmd FileType d set tabstop=2
+  autocmd FileType d set shiftwidth=2
 augroup END
 
 
@@ -227,31 +228,36 @@ nnoremap <Leader>r <Esc>:w<CR>:!./%<CR>
 
 " Quick close without save
 nnoremap QQ <Esc>:q!<CR>
+nnoremap <Leader>Q :qa<CR>
+nnoremap <Leader>q :wall<CR>:qa<CR>
 
 " buffers
 nnoremap <C-h> :bp<CR>
 nnoremap <C-l> :bn<CR>
-nnoremap <leader>1 :b1<CR>
-nnoremap <leader>2 :b2<CR>
-nnoremap <leader>3 :b3<CR>
-nnoremap <leader>4 :b4<CR>
-nnoremap <leader>5 :b5<CR>
-nnoremap <leader>6 :b6<CR>
-nnoremap <leader>7 :b7<CR>
-nnoremap <leader>8 :b8<CR>
-nnoremap <leader>9 :b9<CR>
-nnoremap <leader>0 :b10<CR>
-nnoremap p :bp<CR>
-nnoremap n :bn<CR>
+
+"nnoremap <leader>1 :b1<CR>
+"nnoremap <leader>2 :b2<CR>
+"nnoremap <leader>3 :b3<CR>
+"nnoremap <leader>4 :b4<CR>
+"nnoremap <leader>5 :b5<CR>
+"nnoremap <leader>6 :b6<CR>
+"nnoremap <leader>7 :b7<CR>
+"nnoremap <leader>8 :b8<CR>
+"nnoremap <leader>9 :b9<CR>
+"nnoremap <leader>0 :b10<CR>
+nnoremap u :bp<CR>
+nnoremap i :bn<CR>
 
 " movement
-nnoremap j 10j
-nnoremap k 10k
+nnoremap j 6j
+nnoremap k 6k
 nnoremap h 10h
 nnoremap l 10l
 nnoremap a ^
 nnoremap ; $
 
+nnoremap p <C-b>
+nnoremap n <C-f>
 nnoremap f <C-f>
 nnoremap b <C-b>
 nnoremap <C-n> <C-f>
@@ -263,3 +269,6 @@ nnoremap <F2> :set nonumber!<CR>
 
 " paste
 nnoremap <F3> :set paste!<CR>
+
+
+nnoremap <Space> i
