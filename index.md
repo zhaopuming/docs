@@ -3,4 +3,6 @@ layout: default
 ---
 
 
-# Hello My friend
+# Contents
+
+## [Welcome](/posts/welcome.html)
